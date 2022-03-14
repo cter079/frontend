@@ -1,0 +1,296 @@
+* {
+    margin: 0;
+    padding: 0;
+    letter-spacing: 1px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.dot {
+    display: flex;
+    opacity: 0;
+    color: white;
+}
+
+nav {
+    height: 6rem;
+    width: 100vw;
+    background-color: white;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    position: fixed;
+    z-index: 10;
+    font-family: 'Fredoka One', cursive;
+}
+
+
+/*Styling logo*/
+
+.logo {
+    padding: 1vh 1vw;
+    text-align: center;
+}
+
+.logo img {
+    height: auto;
+    width: 10rem;
+    margin-top: 15px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    width: 88vw;
+    padding: 0 0.7vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    margin: 0 0.7vw;
+    color: #3b3b3b;
+}
+
+.nav-links li a:hover {
+    color: #000000;
+    text-decoration: none;
+    transition-duration: 700ms;
+}
+
+.link:hover+.dot {
+    opacity: 1;
+    transition-duration: 700ms;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    display: flex;
+    padding-left: 0;
+    padding-right: 0;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    background-color: none;
+    font-size: 10px;
+    font-family: 'Red Hat Mono', monospace;
+    justify-content: center;
+    transform: rotateZ(90deg);
+}
+
+.nav-links li {
+    position: relative;
+    text-decoration: none;
+}
+
+
+/*Styling Hamburger Icon*/
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    background: #000000;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.hamburger {
+    display: none;
+}
+
+.headline {
+    width: 100%;
+    height: 50vh;
+    min-height: 350px;
+    background-image: url("https://i.postimg.cc/3wFYd9Qs/Naamloos-1.png");
+    background-size: cover;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.welcome a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.welcome {
+    width: 250px;
+    height: 50px;
+    background: #ffffff;
+    border-radius: 40px;
+    border-color: #000000;
+    position: absolute;
+    left: 620px;
+    top: 15%;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+    line-height: 0px;
+    text-align: center;
+}
+
+.welcome:hover {
+    background: black;
+    color: white;
+    transition-duration: 400ms;
+    cursor: pointer;
+    border-color: white;
+}
+
+.welcome a:hover {
+    color: white;
+}
+
+
+/*Stying for small screens*/
+
+@media screen and (max-width: 800px) {
+    nav {
+        position: fixed;
+        z-index: 3;
+    }
+    .hamburger {
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+    .nav-links {
+        position: fixed;
+        background: #ffffff;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+    li.fade {
+        opacity: 1;
+    }
+    .nav-links.open {
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .nav-links li {
+        opacity: 0;
+    }
+    .nav-links li:nth-child(1) {
+        transition: all 0.5s ease 0.2s;
+    }
+    .nav-links li:nth-child(2) {
+        transition: all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3) {
+        transition: all 0.5s ease 0.6s;
+    }
+    .nav-links li:nth-child(4) {
+        transition: all 0.5s ease 0.7s;
+    }
+    .nav-links li:nth-child(5) {
+        transition: all 0.5s ease 0.8s;
+    }
+    .nav-links li:nth-child(6) {
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+    .nav-links li:nth-child(7) {
+        transition: all 0.5s ease 1s;
+        margin: 0;
+    }
+    li.fade {
+        opacity: 1;
+    }
+    .welcome {
+        display: none;
+    }
+    .headline {
+        width: 100%;
+        height: auto;
+        background-image: url("https://i.postimg.cc/3wFYd9Qs/Naamloos-1.png");
+        background-size: contain;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 10%;
+    }
+}
+
+
+/*Animating Hamburger Icon on Click*/
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    transition: all 0.7s ease;
+    width: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.infographic-wrapper {
+    display: flex;
+    padding-right: 0.7vw;
+    padding-left: 0.7vw;
+    width: 100vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+.blokken {
+    color: black;
+    font-family: 'Public Sans', sans-serif;
+    width: 350px;
+    height: 200px;
+    background: #ffffff;
+    border-radius: 40px;
+    border-style: solid;
+    border-color: rgb(95, 95, 95);
+    border-width: 1px;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+}
+
+.button4 {
+    width: 125px;
+    height: 25px;
+    background: #ffcc00;
+    border-radius: 40px;
+    cursor: pointer;
+    color: black;
+    text-align: center;
+}
+
+.button4:hover {
+    color: white;
+    transition-duration: 400ms;
+}
+
+.openings {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+}

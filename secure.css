@@ -1,0 +1,60 @@
+    * {
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+        font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .background {
+        z-index: 1;
+    }
+    
+    body {
+        margin: 0;
+        background-color: #435165;
+        background: url("https://i.postimg.cc/W4mBRpr6/jumbo-achtergrond.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    
+    .edit {
+        width: 400px;
+        background-color: #ffffff;
+        box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+        margin: 100px auto;
+        border-radius: 25px;
+    }
+    
+    .input {
+        padding-bottom: 10px;
+    }
+    
+    .submit {
+        width: 100%;
+        padding: 15px;
+        margin-top: 20px;
+        background-color: #fecb00;
+        border: 0;
+        cursor: pointer;
+        font-weight: bold;
+        color: #ffffff;
+        transition: background-color 0.2s;
+        border-radius: 24px;
+    }
+    
+    .submit:hover {
+        background-color: #000000;
+        transition: background-color 0.2s;
+        color: #fecb00;
+    }
+    
+    .succes {
+        color: green;
+        font-family: 'Public Sans', sans-serif;
+    }
+    
+    .fault {
+        color: red;
+        font-family: 'Public Sans', sans-serif;
+    }
